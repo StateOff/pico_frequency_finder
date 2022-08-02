@@ -17,6 +17,17 @@ Finds the closest possible clocks to a given frequency for the Raspberry Pi Pico
 This tool is based on the `vcocalc.py` tool from the pico-sdk.
 
 Make sure to set the PICO_SDK_PATH environment variable.
+
+Columns Description:
+    Error -> Absolute difference between requested (multiplied) and achieved frequency
+    Mult -> Integer multiplier of the requested frequency
+    Requested Freq -> Multiplied Requested Frequency (requested_freq * Mult)
+    Achieved Freq -> Possible frequency
+    Over-/Undercl -> Difference to given input frequency
+    FBDIV -> Feedback Divider
+    VCO -> Voltage Controller Oscillator frequency (fbdiv * crystal_freq_khz)
+    PD1 -> First Post Divider
+    PD2 -> Second Post Divider
 """
 
 import argparse

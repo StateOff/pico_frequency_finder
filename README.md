@@ -1,7 +1,7 @@
 # :mag: :clock230: Pico Frequency Finder
 Finds the closest possible clocks to a given frequency for the [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/).
-The output is a `CSV` formated list.
-This tool uses `vcocalc.py` from the pico-sdk and just makes it conveniet to compare various frequency multipliers quickly.
+The output is a `CSV` formatted list.
+This tool uses `vcocalc.py` from the pico-sdk and just makes it convenient to compare various frequency multipliers quickly.
 
 ## Getting started
 
