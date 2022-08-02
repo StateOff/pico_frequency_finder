@@ -89,14 +89,14 @@ def print_header():
             "PD2"
         )
     )
-def print_entry(abs_error, input_freq, entry):
+def print_entry(abs_error, default_freq, entry):
     print(
         "{:>18.16f}, {:>4}, {:>21.16f}, {:>21.16f}, {:>16.6f}, {:>6}, {:>5}, {:>4}, {:>4}".format(
             abs_error,
             entry['requested_multiplier'],
             entry['requested_freq'],
             entry['freq'],
-            entry['freq'] - input_freq,
+            entry['freq'] - default_freq,
             entry['fbdiv'],
             entry['vco'],
             entry['pd1'],
@@ -111,14 +111,14 @@ if __name__ == '__main__':
     parser.add_argument('--all', action='store_true', help="Print all result, by default the closest match(es) will be shown")
     parser.add_argument('--max_freq', type=float, default=420, help="The maximum frequency the CPU can be overclocked to")
     parser.add_argument('--min_freq', type=float, default=16, help="The minimum frequency the CPU can run with")
-    parser.add_argument('--input_freq', type=float, default=125.0, help="The default CPU frequency used to calculate over-/underclock")
+    parser.add_argument('--default_freq', type=float, default=125.0, help="The default CPU frequency used to calculate over-/underclock")
     parser.add_argument('--version', action='version', version='{} v{}'.format(TITLE, ".".join([str(s) for s in VERSION])) ,help='Show version and exit')
 
     args = parser.parse_args()
 
     min_multiplier = math.floor(args.min_freq / args.requested_freq)
     max_multiplier = math.floor(args.max_freq / args.requested_freq)
-    input_freq = args.input_freq
+    default_freq = args.default_freq
 
     all = {}
 
@@ -148,8 +148,8 @@ if __name__ == '__main__':
     if not args.all:
         abs_error = sorted(all)[0]
         for entry in all[abs_error]:
-            print_entry(abs_error, input_freq, entry)
+            print_entry(abs_error, default_freq, entry)
     else:
         for abs_error in sorted(all):
             for entry in all[abs_error]:
-                print_entry(abs_error, input_freq, entry)
+                print_entry(abs_error, default_freq, entry)

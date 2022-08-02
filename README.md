@@ -64,7 +64,7 @@ options:
   --all                 Print all result, by default the closest match(es) will be shown
   --max_freq MAX_FREQ   The maximum frequency the CPU can be overclocked to
   --min_freq MIN_FREQ   The minimum frequency the CPU can run with
-  --input_freq INPUT_FREQ
+  --default_freq INPUT_FREQ
                         The default CPU frequency used to calculate over-/underclock
   --version             Show version and exit
 ```
