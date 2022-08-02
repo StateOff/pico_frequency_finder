@@ -71,7 +71,7 @@ options:
 
 ## License & Credits
 
-This tool depends on the `vcocalc.py` tool in the pico-sdk by the raspberry pi foundation.
+This tool depends on the `vcocalc.py` tool in the pico-sdk by raspberry pi.
 
 Written by Blazej Floch.
 
