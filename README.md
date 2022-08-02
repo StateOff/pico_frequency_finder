@@ -1,22 +1,23 @@
-# pico_frequency_finder
-Finds the closest possible clocks to a given frequency for the Raspberry Pi Pico.
-The output is a `CSV` formated list
+# :mag: :clock230: Pico Frequency Finder
+Finds the closest possible clocks to a given frequency for the [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/).
+The output is a `CSV` formated list.
+This tool uses `vcocalc.py` from the pico-sdk and just makes it conveniet to compare various frequency multipliers quickly.
 
-# Getting started
+## Getting started
 
-1. Install python 3.x
+1. Install [python 3.x](https://www.python.org/downloads/)
 2. Clone
 ```sh
 git@github.com:StateOff/pico_frequency_finder.git
 cd pico_frequency_finder
 ```
-3. Set `PICO_SDK_PATH` to a local clone of https://github.com/raspberrypi/pico-sdk
+3. Set `PICO_SDK_PATH` to a local clone of the [pico-sdk](https://github.com/raspberrypi/pico-sdk)
 ```sh
 # Linux
-export PICO_SDK_PATH=/home/stateoff/pico-sdk
+export PICO_SDK_PATH="/home/stateoff/pico-sdk"
 
 # Windows (cmd)
-set PICO_SDK_PATH=C:\pico-sdk
+set PICO_SDK_PATH="C:\pico-sdk"
 ```
 4. Run with a requested frequency as argument.
 ```sh
@@ -34,7 +35,7 @@ python frequency_finder.py --all --min_freq 50 --max_freq 180 3.5795454545454545
 ...
 ```
 
-# Help
+## Help
 
 ```
 usage: frequency_finder.py [-h] [--all] [--max_freq MAX_FREQ] [--min_freq MIN_FREQ] [--input_freq INPUT_FREQ] [--version] requested_freq
@@ -68,8 +69,10 @@ options:
   --version             Show version and exit
 ```
 
-# License & Credits
+## License & Credits
 
-This tool depends on the `vcocalc.py` tool in the pico-sdk.
+This tool depends on the `vcocalc.py` tool in the pico-sdk by the raspberry pi foundation.
+
+Written by Blazej Floch.
 
 MIT compare `LICENSE`
